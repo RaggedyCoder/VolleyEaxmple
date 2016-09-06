@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--grey button-->
+    <color name="grey_button_normal">#ffffff</color>
+    <color name="grey_button_pressed">#c6c6c6</color>
+    <color name="grey_button_hovered">#e1e1e1</color>
+    <color name="grey_button_focused">#8f8f8f</color>
+    <color name="grey_button_selected">#747474</color>
+</resources>
