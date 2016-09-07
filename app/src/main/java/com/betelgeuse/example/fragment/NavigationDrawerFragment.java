@@ -16,6 +16,7 @@ public class NavigationDrawerFragment extends AppFragment<NavigationDrawerFragme
 
 
     private SwitchFragmentListener switchFragmentListener;
+    private int currentFragment = 0;
 
     @Override
     ViewHolder onCreateViewHolder(LayoutInflater inflater, @Nullable ViewGroup container) {
@@ -31,14 +32,17 @@ public class NavigationDrawerFragment extends AppFragment<NavigationDrawerFragme
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == currentFragment)
+            return switchFragmentListener.changeFragment(-1);
         switch (item.getItemId()) {
             case R.id.nav_news_feed:
-                return switchFragmentListener.changeFragment(0);
+                currentFragment = item.getItemId();
+                break;
             case R.id.nav_friend_list:
-                return switchFragmentListener.changeFragment(1);
-            default:
-                return false;
+                currentFragment = item.getItemId();
+                break;
         }
+        return switchFragmentListener.changeFragment(currentFragment);
     }
 
 

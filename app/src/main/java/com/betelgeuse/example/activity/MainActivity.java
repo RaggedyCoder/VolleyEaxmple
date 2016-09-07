@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.betelgeuse.example.R;
+import com.betelgeuse.example.fragment.FriendListFragment;
 import com.betelgeuse.example.fragment.NewsFeedFragment;
 
 /**
@@ -36,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements SwitchFragmentLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "onCreate(Bundle savedInstanceState)");
+        for (int i = 0; i < 10; i++) {
+            Log.d(TAG, System.currentTimeMillis() + "");
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -56,8 +60,8 @@ public class MainActivity extends AppCompatActivity implements SwitchFragmentLis
         mainAppDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         actionBarDrawerToggle = new DrawerToggle(this, mainAppDrawerLayout, toolbar, R.string.app_name, R.string.app_name);
         mainAppDrawerLayout.addDrawerListener(actionBarDrawerToggle);
-
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -87,6 +91,14 @@ public class MainActivity extends AppCompatActivity implements SwitchFragmentLis
     public boolean changeFragment(int fragmentId) {
         Log.d(TAG, "changeFragment(int fragmentId)");
         mainAppDrawerLayout.closeDrawer(GravityCompat.START);
+        switch (fragmentId) {
+            case R.id.nav_news_feed:
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_activity_container, new NewsFeedFragment()).commit();
+                break;
+            case R.id.nav_friend_list:
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_activity_container, new FriendListFragment()).commit();
+                break;
+        }
         return true;
     }
 

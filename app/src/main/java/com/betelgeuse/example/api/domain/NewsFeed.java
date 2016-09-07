@@ -4,14 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class NewsFeed {
 
-    @SerializedName("user_name")
-    private String username;
-    @SerializedName("p_url")
-    private String profileUrl;
-    @SerializedName("full_name")
-    private String fullName;
-    @SerializedName("pp_url")
-    private String profilePictureUrl;
+    private User user;
     private long timestamp;
     private String status;
     @SerializedName("image_url")
@@ -22,49 +15,21 @@ public class NewsFeed {
     public NewsFeed() {
     }
 
-    public NewsFeed(String username, String profileUrl, String fullName, String profilePictureUrl, long timestamp, String status, String imageUrl, int newsType) {
-
-        this.username = username;
-        this.profileUrl = profileUrl;
-        this.fullName = fullName;
-        this.profilePictureUrl = profilePictureUrl;
+    public NewsFeed(User user, long timestamp, String status, String imageUrl, int newsType) {
+        this.user = user;
         this.timestamp = timestamp;
         this.status = status;
         this.imageUrl = imageUrl;
         this.newsType = newsType;
     }
 
-    public String getUsername() {
+    public User getUser() {
 
-        return username;
+        return user;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getProfileUrl() {
-        return profileUrl;
-    }
-
-    public void setProfileUrl(String profileUrl) {
-        this.profileUrl = profileUrl;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getProfilePictureUrl() {
-        return profilePictureUrl;
-    }
-
-    public void setProfilePictureUrl(String profilePictureUrl) {
-        this.profilePictureUrl = profilePictureUrl;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public long getTimestamp() {
@@ -109,10 +74,7 @@ public class NewsFeed {
 
         if (timestamp != newsFeed.timestamp) return false;
         if (newsType != newsFeed.newsType) return false;
-        if (!username.equals(newsFeed.username)) return false;
-        if (!profileUrl.equals(newsFeed.profileUrl)) return false;
-        if (!fullName.equals(newsFeed.fullName)) return false;
-        if (!profilePictureUrl.equals(newsFeed.profilePictureUrl)) return false;
+        if (!user.equals(newsFeed.user)) return false;
         if (!status.equals(newsFeed.status)) return false;
         return imageUrl.equals(newsFeed.imageUrl);
 
@@ -120,10 +82,7 @@ public class NewsFeed {
 
     @Override
     public int hashCode() {
-        int result = username.hashCode();
-        result = 31 * result + profileUrl.hashCode();
-        result = 31 * result + fullName.hashCode();
-        result = 31 * result + profilePictureUrl.hashCode();
+        int result = user.hashCode();
         result = 31 * result + (int) (timestamp ^ (timestamp >>> 32));
         result = 31 * result + status.hashCode();
         result = 31 * result + imageUrl.hashCode();
@@ -134,10 +93,7 @@ public class NewsFeed {
     @Override
     public String toString() {
         return "NewsFeed{" +
-                "username='" + username + '\'' +
-                ", profileUrl='" + profileUrl + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", profilePictureUrl='" + profilePictureUrl + '\'' +
+                "user=" + user +
                 ", timestamp=" + timestamp +
                 ", status='" + status + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +

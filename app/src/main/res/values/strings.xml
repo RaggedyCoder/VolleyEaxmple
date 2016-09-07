@@ -8,4 +8,5 @@
     <string name="about_app">About Us</string>
     <string name="news_feed">News Feed</string>
     <string name="friend_list">Friends</string>
+    <string name="dummy_mutual_friends">10 Mutual Friends</string>
 </resources>

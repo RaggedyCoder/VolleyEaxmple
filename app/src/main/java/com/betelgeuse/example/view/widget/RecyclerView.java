@@ -106,6 +106,12 @@ public class RecyclerView extends android.support.v7.widget.RecyclerView impleme
         setHasFixedSize(true);
     }
 
+    public void setAsGridType(int spanCount) {
+        layoutManager = new GridLayoutManager(getContext(), spanCount);
+        setLayoutManager(layoutManager);
+        setHasFixedSize(true);
+    }
+
     public int findFirstCompletelyVisibleItemPosition() {
         return layoutManager instanceof LinearLayoutManager ?
                 ((LinearLayoutManager) layoutManager).findFirstCompletelyVisibleItemPosition() :

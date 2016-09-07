@@ -3,46 +3,46 @@ package com.betelgeuse.example.api.domain;
 import com.google.gson.annotations.SerializedName;
 
 public class MetaData {
-    @SerializedName("total_feed")
-    private int totalFeed;
-    @SerializedName("p_feeds")
-    private String previousFeeds;
-    @SerializedName("n_feeds")
-    private String nextFeeds;
+    @SerializedName("t_data")
+    private int totalData;
+    @SerializedName("p_link")
+    private String previousDataLink;
+    @SerializedName("n_link")
+    private String nextDataLink;
 
     public MetaData() {
     }
 
-    public MetaData(int totalFeed, String previousFeeds, String nextFeeds) {
+    public MetaData(int totalData, String previousDataLink, String nextDataLink) {
 
-        this.totalFeed = totalFeed;
-        this.previousFeeds = previousFeeds;
-        this.nextFeeds = nextFeeds;
+        this.totalData = totalData;
+        this.previousDataLink = previousDataLink;
+        this.nextDataLink = nextDataLink;
     }
 
-    public int getTotalFeed() {
+    public int getTotalData() {
 
-        return totalFeed;
+        return totalData;
     }
 
-    public void setTotalFeed(int totalFeed) {
-        this.totalFeed = totalFeed;
+    public void setTotalData(int totalData) {
+        this.totalData = totalData;
     }
 
-    public String getPreviousFeeds() {
-        return previousFeeds;
+    public String getPreviousDataLink() {
+        return previousDataLink;
     }
 
-    public void setPreviousFeeds(String previousFeeds) {
-        this.previousFeeds = previousFeeds;
+    public void setPreviousDataLink(String previousDataLink) {
+        this.previousDataLink = previousDataLink;
     }
 
-    public String getNextFeeds() {
-        return nextFeeds;
+    public String getNextDataLink() {
+        return nextDataLink;
     }
 
-    public void setNextFeeds(String nextFeeds) {
-        this.nextFeeds = nextFeeds;
+    public void setNextDataLink(String nextDataLink) {
+        this.nextDataLink = nextDataLink;
     }
 
     @Override
@@ -53,26 +53,26 @@ public class MetaData {
 
         MetaData metaData = (MetaData) o;
 
-        if (totalFeed != metaData.totalFeed) return false;
-        if (!previousFeeds.equals(metaData.previousFeeds)) return false;
-        return nextFeeds.equals(metaData.nextFeeds);
+        if (totalData != metaData.totalData) return false;
+        if (!previousDataLink.equals(metaData.previousDataLink)) return false;
+        return nextDataLink.equals(metaData.nextDataLink);
 
     }
 
     @Override
     public int hashCode() {
-        int result = totalFeed;
-        result = 31 * result + previousFeeds.hashCode();
-        result = 31 * result + nextFeeds.hashCode();
+        int result = totalData;
+        result = 31 * result + previousDataLink.hashCode();
+        result = 31 * result + nextDataLink.hashCode();
         return result;
     }
 
     @Override
     public String toString() {
         return "MetaData{" +
-                "totalFeed=" + totalFeed +
-                ", previousFeeds='" + previousFeeds + '\'' +
-                ", nextFeeds='" + nextFeeds + '\'' +
+                "totalData=" + totalData +
+                ", previousDataLink='" + previousDataLink + '\'' +
+                ", nextDataLink='" + nextDataLink + '\'' +
                 '}';
     }
 }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="175dip"
+        android:layout_margin="10dip"
+        app:cardElevation="5dip">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/status_holder_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/profile_picture_image_view"
+                    android:layout_width="75dip"
+                    android:layout_height="75dip"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/default_profile_pic"
+                    app:riv_oval="true" />
+
+                <TextView
+                    android:id="@+id/full_name_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/profile_picture_image_view"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dip"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="@string/full_name"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/mutual_friend_count_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/full_name_text_view"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="2dip"
+                    android:text="@string/dummy_mutual_friends"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>
